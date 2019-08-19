@@ -29,6 +29,11 @@ public_file=/www/server/panel/install/public.sh
 if [ ! -f $public_file ];then
 	wget -O $public_file http://download.bt.cn/install/public.sh -T 5;
 fi
+publicFileMd5=$(md5sum ${public_file}|awk '{print $1}')
+md5check="fe788869067389f515c599b6946d7ed0"
+if [ "${publicFileMd5}" != "${md5check}"  ]; then
+	wget -O $public_file http://download.bt.cn/install/public.sh -T 5;
+fi
 . $public_file
 
 download_Url=$NODE_URL

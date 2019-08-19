@@ -10,12 +10,6 @@ if [ ! -d /www/server/panel/BTPanel ];then
 	exit 0;
 fi
 
-public_file=/www/server/panel/install/public.sh
-if [ ! -f $public_file ];then
-	wget -O $public_file http://download.btpanel.net/install/public.sh -T 5;
-fi
-. $public_file
-
 download_Url=$NODE_URL
 btpanel=https://download.btpanel.net
 setup_path=/www

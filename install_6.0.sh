@@ -476,8 +476,6 @@ if [ -f "$setup_path/server/panel/data/default.db" ];then
 	mv -f $setup_path/server/panel/data/admin_path.pl $setup_path/server/panel/old_data/admin_path.pl
 fi
 
-chmod +x /www/server/panel/install/public.sh
-chattr -i /www/server/panel/install/public.sh
 unzip -o panel.zip -d $setup_path/server/ > /dev/null
 chmod +x /www/server/panel/install/public.sh
 chattr +i /www/server/panel/install/public.sh
